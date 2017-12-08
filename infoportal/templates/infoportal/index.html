@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "index.css" %}">
+    <script src="/static/index.js"></script>
+  </head>
+  <body>
+    <div class="nav_bar">
+      <div class="logo-div">
+        <a href="{% url 'infoportal:index' %}"><img src="/static/shrilogo.png" alt="Shri Logo" class="logo"></a>
+      </div>
+
+      {% if user.is_authenticated %}
+        <p class="option greeting">Hi {{ user.username }}.</p>
+        <p class="option button"><a href="{% url 'logout' %}">Logout</a></p>
+        <p class="option button"><a href="{% url 'infoportal:newpost' %}">New Post</a></p>
+      {% else %}
+        <p class="option button"><a href="{% url 'login' %}">Login</a></p>
+        <p class="option button"><a href="{% url 'signup' %}">Sign Up</a></p>
+      {% endif %}
+    </div>
+    <div style="height: 120px;"></div>
+
+    <div class="filter-container">
+    </div>
+
+    <div class="post-container">
+      {% for post in all_posts %}
+        <div class="post {{post.house}} {{post.society}} {{post.category}}">
+          <p class="post-title">{{ post.title }}</p>
+          <p class="post-text">{{ post.text }}</p>
+          <p class="post-date">{{ post.pub_date }}</p>
+          <p>Published by {{ post.user.username }} in {{ post.house }}, {{ post.society }}, {{ post.category }}</p>
+        </div>
+      {% endfor %}
+    </div>
+
+  </body>
+</html>

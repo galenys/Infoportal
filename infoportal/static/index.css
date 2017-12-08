@@ -1,0 +1,100 @@
+body {
+  background-image: url('/static/background.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  margin: 0px;
+  font-family: 'Open Sans', sans-serif;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.button {
+  background-color: rgba(255, 0, 0, 0.4);
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.nav_bar {
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: right;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.nav_bar p {
+  font-size: 25px;
+  display: inline-block;
+  margin: 20px 10px;
+}
+.nav_bar .option {
+  margin-left: auto;
+  margin-right: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.logo-div {
+  float: left;
+}
+.logo {
+  height: 110px;
+  margin-left: 30px;
+  margin-right: 20px;
+}
+.post {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 60%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: 30px;
+  padding: 20px 0;
+}
+.post p {
+  width: 70%;
+  margin: 30px auto;
+}
+.post-title {
+  font-size: 30px;
+}
+.post-text {
+  font-size: 20px;
+}
+.form-div {
+  text-align: center;
+  width: 30%;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin: 0 auto;
+  padding: 30px;
+  padding-top: 20px;
+  margin-top: 200px;
+  color: white;
+}
+.helptext {
+  display: none;
+}
+.submit-button {
+  padding: 10px 15px 11px !important;
+  font-size: 18px !important;
+  background-color: rgba(255, 0, 0, 0.6);
+  border: none;
+  color: #ffffff;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  cursor: pointer;
+}
+.filter-container {
+  position: fixed;
+  top: 140px;
+  left: 20px;
+  width: 35%;
+  height: 500px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
