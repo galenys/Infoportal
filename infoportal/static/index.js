@@ -2,10 +2,23 @@ var classNames = new Array()
 
 // Filters
 function setFilter(names) {
+  // The loops use i and j variables
   var allPosts = document.getElementsByClassName("post")
   for (var i = 0; i < allPosts.length; i++) {
-    var currentPost = allPosts[i]
-
+    var postShouldBeDisplayed = true
+    for (var j = 0; j < names.length; j++) {
+      names[j]
+      if (allPosts[i].classList.contains(names[j])) {
+        // Do nothing
+      } else {
+        postShouldBeDisplayed = false
+      }
+    }
+    if (postShouldBeDisplayed) {
+      allPosts[i].style = "display: block"
+    } else {
+      allPosts[i].style = "display: none"
+    }
   }
 }
 
@@ -26,7 +39,7 @@ function activateFilter(name, id) {
   }
 
   // Now, the final piece, the classification
-  // setFilter(classNames)
+  setFilter(classNames)
 
 }
 
