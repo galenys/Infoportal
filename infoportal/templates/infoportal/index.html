@@ -16,16 +16,31 @@
 
       {% if user.is_authenticated %}
         <p class="option greeting">Hi {{ user.username }}.</p>
-        <p class="option button"><a href="{% url 'logout' %}">Logout</a></p>
-        <p class="option button"><a href="{% url 'infoportal:newpost' %}">New Post</a></p>
+        <p class="option link"><a href="{% url 'logout' %}">Logout</a></p>
+        <p class="option link"><a href="{% url 'infoportal:newpost' %}">New Post</a></p>
       {% else %}
-        <p class="option button"><a href="{% url 'login' %}">Login</a></p>
-        <p class="option button"><a href="{% url 'signup' %}">Sign Up</a></p>
+        <p class="option link"><a href="{% url 'login' %}">Login</a></p>
+        <p class="option link"><a href="{% url 'signup' %}">Sign Up</a></p>
       {% endif %}
     </div>
     <div style="height: 120px;"></div>
+    <!-- This is just a spacer -->
 
     <div class="filter-container">
+      <p class="filter-title">House</p>
+      {% for house_name in house_names %}
+        <button type="button" name="button" onclick="activateFilter('{{ house_name }}', 'house-button-{{ forloop.counter }}')" class="filter-option" id="house-button-{{ forloop.counter }}">{{ house_name }}</button>
+      {% endfor %}
+
+      <p class="filter-title">Society</p>
+      {% for society_name in society_names %}
+        <button type="button" name="button" onclick="activateFilter('{{ society_name }}', 'society-button-{{ forloop.counter }}')" class="filter-option" id="society-button-{{ forloop.counter }}">{{ society_name }}</button>
+      {% endfor %}
+
+      <p class="filter-title">Category</p>
+      {% for category_name in category_names %}
+        <button type="button" name="button" onclick="activateFilter('{{ category_name }}', 'category-button-{{ forloop.counter }}')" class="filter-option" id="category-button-{{ forloop.counter }}">{{ category_name }}</button>
+      {% endfor %}
     </div>
 
     <div class="post-container">
