@@ -14,8 +14,8 @@ class Post(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     title = models.CharField(max_length=200)
-    text = models.CharField(max_length=1000)
-    pub_date = pub_date = models.DateTimeField('date published')
+    text = models.TextField()
+    pub_date = models.DateTimeField('date published')
 
     ALL_HOUSES = "AllHouses"
     SRISHTI = "Srishti"

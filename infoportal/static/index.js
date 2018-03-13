@@ -43,7 +43,6 @@ function activateFilter(name, id) {
 
 }
 
-// This isn't mine (StackOverflow bruv), just use it to check if an array contains an element
 var contains = function(needle) {
     // Per spec, the way to identify NaN is that it is not equal to itself
     var findNaN = needle !== needle;

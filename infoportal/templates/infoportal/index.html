@@ -15,7 +15,7 @@
       </div>
 
       {% if user.is_authenticated %}
-        <p class="option greeting">Hi {{ user.username }}.</p>
+        <p class="option greeting">Hi {{ user.username }}</p>
         <p class="option link"><a href="{% url 'logout' %}">Logout</a></p>
         <p class="option link"><a href="{% url 'infoportal:newpost' %}">New Post</a></p>
       {% else %}
@@ -49,7 +49,7 @@
           <p class="post-title">{{ post.title }}</p>
           <p class="post-text">{{ post.text }}</p>
           <p class="post-date">{{ post.pub_date }}</p>
-          <p>Published by {{ post.user.username }} in {{ post.house }}, {{ post.society }}, {{ post.category }}</p>
+          <p class="post-categories">Published by {{ post.user.username }} in {{ post.house }}, {{ post.society }}, {{ post.category }}</p>
         </div>
       {% endfor %}
     </div>
